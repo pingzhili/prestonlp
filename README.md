@@ -13,5 +13,5 @@
 ## Main Features
 
 * Extending PyTorch functions.
-* Provide handy utils for NLP-related processing requirements.
+* Providing handy utils for NLP-related processing requirements.
 * Coming soon ...
