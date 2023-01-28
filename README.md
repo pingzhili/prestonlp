@@ -13,5 +13,5 @@
 ## Main Features
 
 * Extending PyTorch functions.
-* Provide methods out-of-box for experiment management (conduct, logging, record...).
+* Provide handy utils for NLP-related processing requirements.
 * Coming soon ...
