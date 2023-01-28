@@ -1,1 +1,3 @@
+from elmo_lstm import ElmoLstm
+from feed_forward import FeedForward
 from sampled_softmax_loss import SampledSoftmaxLoss

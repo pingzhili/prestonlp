@@ -1,7 +1,7 @@
 from torch import nn
 from torch.nn.functional import sigmoid
 
-from ...prestonlp.modules import SampledSoftmaxLoss
+from prestonlp.modules import SampledSoftmaxLoss
 
 
 def test_sampled_softmax_loss():

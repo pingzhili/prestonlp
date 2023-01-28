@@ -45,7 +45,8 @@ class ElmoLstm(torch.nn.Module):
         Examples
         --------
         >>> elmo = ElmoLstm(input_size=10, embedding_dim=16, hidden_size=8, num_layers=2)
-        >>> seq_ids = torch.LongTensor([[1, 2, 3, 4, 5, 6, 7, 8, 9, 0], [1, 2, 3, 4, 5, 6, 7, 0, 0, 0], [1, 2, 3, 4, 5, 0, 0, 0, 0, 0]])
+        >>> seq_ids = torch.LongTensor([[1, 2, 3, 4, 5, 6, 7, 8, 9, 0], [1, 2, 3, 4, 5, 6, 7, 0, 0, 0], \
+         [1, 2, 3, 4, 5, 0, 0, 0, 0, 0]])
         >>> seq_lens = torch.LongTensor([9, 7, 5])
         >>> outputs, hiddens = elmo(seq_ids, seq_lens)
         >>> outputs.shape

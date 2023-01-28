@@ -6,7 +6,7 @@ from typing import Set, Tuple
 import numpy as np
 import torch
 
-from ..nn.util import tiny_value_of_dtype
+from prestonlp.nn.util import tiny_value_of_dtype
 
 
 def _choice(
