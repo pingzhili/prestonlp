@@ -88,9 +88,10 @@ class SampledSoftmaxLoss(torch.nn.Module):
         assert num_samples < num_words
 
         self.choice_func = _choice
+        self.sparse = sparse
 
         # Glorit init (std=(1.0 / sqrt(fan_in))
-        if sparse:
+        if self.sparse:
             # create our own sparse embedding
             self.softmax_w = torch.nn.Embedding(
                 num_embeddings=num_words, embedding_dim=embedding_dim, sparse=True
@@ -108,7 +109,6 @@ class SampledSoftmaxLoss(torch.nn.Module):
             )
             self.softmax_b = torch.nn.Parameter(torch.zeros(num_words))
 
-        self.sparse = sparse
         self.use_character_inputs = use_character_inputs
 
         if use_character_inputs:
@@ -138,9 +138,9 @@ class SampledSoftmaxLoss(torch.nn.Module):
             embeddings: torch.Tensor,
             targets: torch.Tensor,
     ) -> torch.Tensor:
-        # embeddings is size (n, embedding_dim)
+        # `embeddings` is size (n, embedding_dim)
         # targets is (n_words, ) with the index of the actual target
-        # when tieing weights, target_token_embedding is required.
+        # when tying weights, target_token_embedding is required.
         # it is size (n_words, embedding_dim)
         # returns log likelihood loss (batch_size, )
         # Does not do any count normalization / divide by batch size
